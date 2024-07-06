@@ -1,0 +1,15 @@
+.typing-challenge-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.details-contianers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.type-container {
+  display: flex;
+  flex-grow: 1;
+}

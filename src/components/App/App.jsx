@@ -4,6 +4,7 @@ import Nav from "../Nav/Nav";
 import Landing from "../Landing/Landing";
 import Footer from "../Footer/Footer";
 import ChallengeSection from "../ChallengeSection/ChallengeSection";
+import TestContainer from "../TestContainer/TestContainer";
 
 export default class App extends Component {
   render() {
