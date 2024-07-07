@@ -1,7 +1,7 @@
 import React from "react";
 import "./Tryagain.css";
 
-export default function TryAgain({ words, characters, wpm }) {
+export default function TryAgain({ words, characters, wpm, startAgain }) {
   const url = "kishorekumarbs.com";
   return (
     <div className="try-again-container">
@@ -18,7 +18,12 @@ export default function TryAgain({ words, characters, wpm }) {
         </p>
       </div>
       <div>
-        <button className="end-buttons start-again-btn">Re-try</button>
+        <button
+          onClick={() => startAgain()}
+          className="end-buttons start-again-btn"
+        >
+          Re-try
+        </button>
         <button
           className="end-buttons share-btn"
           onClick={() => {

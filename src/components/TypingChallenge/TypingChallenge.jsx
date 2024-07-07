@@ -1,19 +1,40 @@
 import React from "react";
 import "./TypingChallenge.css";
+import TestLetter from "../TestLetter/TestLetter";
 
-export default function ({ selectedParagraph }) {
+export default function TypingChallenge({
+  onInputChange,
+  timeRemaining,
+  timerStarted,
+  testInfo,
+}) {
   return (
     <div className="typing-challenge">
       <div className="timer-container">
-        <p className="timer">00:60</p>
-        <p className="timer-info">Start typing to begin the test</p>
+        <p className="timer">
+          00:
+          {timeRemaining >= 10 ? timeRemaining : `0${timeRemaining}`}
+        </p>
+        <p className="timer-info">
+          {!timerStarted && "Start typing to begin the test"}
+        </p>
       </div>
       <div className="textarea-container">
         <div className="textarea-left">
-          <div className="textarea test-paragraph">{selectedParagraph}</div>
+          <div className="textarea text-paragraph">
+            {/* {selectedParagraph} */}
+            {testInfo.map((individualLetter, index) => {
+              return (
+                <TestLetter key={index} individualLetter={individualLetter} />
+              );
+            })}
+          </div>
         </div>
         <div className="textarea-right">
           <textarea
+            onChange={(e) => {
+              onInputChange(e.target.value);
+            }}
             className="textarea"
             placeholder="Start typing here"
           ></textarea>

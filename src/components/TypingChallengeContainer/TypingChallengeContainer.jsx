@@ -3,7 +3,16 @@ import "./TypingChallengeContainer.css";
 import ChallengeDetailsCard from "../ChallengeDetailsCard/ChallengeDetailsCard";
 import TypingChallenge from "../TypingChallenge/TypingChallenge";
 
-export default function TypingChallengeContainer({ words, characters, wpm }) {
+export default function TypingChallengeContainer({
+  selectedParagraph,
+  words,
+  characters,
+  wpm,
+  timeRemaining,
+  timerStarted,
+  onInputChange,
+  testInfo,
+}) {
   return (
     <div className="typing-challenge-container">
       {/* Details Section */}
@@ -13,7 +22,13 @@ export default function TypingChallengeContainer({ words, characters, wpm }) {
         <ChallengeDetailsCard cardName="wpm" cardValue={wpm} />
       </div>
       <div className="typewriter-container">
-        <TypingChallenge selectedParagraph="Hello World!" />
+        <TypingChallenge
+          onInputChange={onInputChange}
+          timerStarted={timerStarted}
+          timeRemaining={timeRemaining}
+          selectedParagraph={selectedParagraph}
+          testInfo={testInfo}
+        />
       </div>
     </div>
   );
