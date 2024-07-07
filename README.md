@@ -21,7 +21,8 @@ Measure your typing speed with this interactive web application. ⌨️💨
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/typing-speed-test.git
+   git clone https://github.com/KishorekumarBS/Flashtype.git
+   git
    cd typing-speed-test
    ```
 
